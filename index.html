@@ -50,7 +50,7 @@
     <section class="jumbotron text-center">
       <img src="img/ADV.jpeg" alt="Adventrihard" width="200" class="rounded-circle img-thumbnail" />
       <h1 class="display-4">Adventrihard</h1>
-      <p class="lead">IT Suporting | Devolpment</p>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -156,6 +156,71 @@
     </section>
     <!-- Akhir Projects -->
 
+    <!-- Galery -->
+<section id="gallery">
+  <div class="container">
+    <div class="row text-center mb-3">
+      <div class="col">
+        <h2>Gallery</h2>
+      </div>
+    </div>
+<div class="row justify-content-center">
+  <div class="col-md-3">
+    <a href="#">
+      <img src="img/gallery/thumbnail/1.JPG" alt="Gambar 1" class="img-fluid gallery-img"/>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <a href="#">
+      <img src="img/gallery/thumbnail/2.JPG" alt="Gambar 2" class="img-fluid gallery-img"/>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <a href="#">
+      <img src="img/gallery/thumbnail/3.JPG" alt="Gambar 3" class="img-fluid gallery-img"/>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <a href="#">
+      <img src="img/gallery/thumbnail/4.JPG" alt="Gambar 4" class="img-fluid gallery-img"/>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <a href="#">
+      <img src="img/gallery/thumbnail/5.JPG" alt="Gambar 5" class="img-fluid gallery-img"/>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <a href="#">
+      <img src="img/gallery/thumbnail/6.JPG" alt="Gambar 6" class="img-fluid gallery-img"/>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <a href="#">
+      <img src="img/gallery/thumbnail/7.JPG" alt="Gambar 7" class="img-fluid gallery-img"/>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <a href="#">
+      <img src="img/gallery/thumbnail/8.JPG" alt="Gambar 8" class="img-fluid gallery-img"/>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <a href="#">
+      <img src="img/gallery/thumbnail/9.JPG" alt="Gambar 9" class="img-fluid gallery-img"/>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <a href="#">
+      <img src="img/gallery/thumbnail/10.JPG" alt="Gambar 10" class="img-fluid gallery-img"/>
+    </a>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+    <!-- Akhir Galery -->
+
     <!-- Contact -->
     <section id="contact"></section>
       <div class="container">
@@ -208,8 +273,28 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+        const galleryImage = document.querySelectorAll('.gallery-img');
+
+        galleryImage.forEach((img, i)=>{
+          img.dataset.aos = 'fade-down';
+          img.dataset.aosDelay = i * 100;
+          img.dataset.aosDuration = 1000;
+
+        });
       AOS.init();
     </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/TextPlugin.min.js"></script>
+<script>
+  gsap.registerPlugin(TextPlugin);
+  gsap.to('.lead', {duration: 2, delay:1.5, text:'IT Suporting | Devolpment'});
+  gsap.from('.jumbotron img', { duration: 1, rotateY: 360, opacity: 0,});
+  gsap.from('.navbar', { duration: 1.5, y:'-100%', opacity: 0, ease: 'bounce' });
+  gsap.from('.display-4', { duration: 1, x:-50, opacity: 0, delay : 0.5, ease: 'elastic' });
+</script>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script>
